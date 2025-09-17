@@ -80,7 +80,7 @@ const [eats, setEats] = useState<Eat[]>([]);
   // Fetch places
   const fetchPlaces = async () => {
     try {
-      const res = await fetch("/api/admin/places");
+      const res = await fetch("/api/places");
       const data = await res.json();
       setPlaces(data);
     } catch (error) {
