@@ -155,13 +155,8 @@ export default function SignUpPage() {
               className="w-full h-[40px] bg-[#F5F5F5] text-[#666666] placeholder-gray-400 border border-[#666666] px-3 rounded-md"
             />
 
-            {/* Avatar input */}
-            <input
-              type="file"
-              accept="image/*"
-              onChange={handleAvatarChange}
-              className="w-full text-xs text-[#666666]"
-            />
+            
+          
 
             <div className="flex items-start gap-2 text-[#666666] text-xs">
               <input type="checkbox" className="mt-1 accent-purple-700" />
