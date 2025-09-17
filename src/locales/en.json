@@ -1,0 +1,313 @@
+{
+  "common": {
+    "brand": "Visit Janoub",
+    "login": "Sign In / Sign Up",
+    "english": "English",
+    "arabic": "العربية",
+    "viewAll": "View all"
+  },
+  "navbar": {
+    "explore": "Explore Janoub",
+    "live": "Janoub Live",
+    "eats": "Janoub Eats"
+  },
+  "home": {
+    "hero": {
+      "alt": "Promotional banner",
+      "title": "Welcome to Visit Janoub",
+      "subtitle": "Discover lively experiences and unforgettable moments in the south of Saudi Arabia.",
+      "cta": "Explore now"
+    },
+    "explore": {
+      "title": "Explore Janoub",
+      "places": {
+        "taif": "Taif",
+        "albaha": "Al Baha",
+        "aseer": "Aseer",
+        "jazan": "Jazan"
+      }
+    },
+    "categories": {
+      "title": "Explore & Enjoy",
+      "shopping": "Shopping",
+      "dining": "Dining",
+      "nature": "Nature",
+      "sports": "Sports",
+      "farm": "Farm Tour",
+      "culture": "Culture"
+    },
+    "live": {
+      "title": "Janoub Live",
+      "from": "From",
+      "sar": "Saudi Riyal",
+      "items": [
+        { "title": "Metro Boomin · Quavo · Don Diablo", "date": "17 Jul 2025 → 08 Aug 2025", "location": "Taif", "cta": "Buy Tickets" },
+        { "title": "Hail Festival", "date": "19 Dec 2025 → 01 Jan 2026", "location": "Aseer", "cta": "Buy Tickets" },
+        { "title": "Taste the World", "date": "13 Jul 2025 → 31 Jul 2025", "location": "Al Baha", "cta": "Visit Website" },
+        { "title": "Game On!", "date": "06 Jul 2025 → 12 Jul 2025", "location": "Al Baha", "cta": "Visit Website" },
+        { "title": "Cultural Night", "date": "25 Aug 2025 → 05 Sep 2025", "location": "Jazan", "cta": "Buy Tickets" }
+      ]
+    },
+    "eats": {
+      "title": "Janoub Eats",
+      "items": [
+        { "title": "Over Jar Cafe", "location": "Aseer" },
+        { "title": "Soul", "location": "Al Baha" },
+        { "title": "Baitana Alqadeem", "location": "Taif" },
+        { "title": "Ala Bali Restaurant", "location": "Aseer" },
+        { "title": "Place 5", "location": "Aseer" },
+        { "title": "Place 6", "location": "Aseer" }
+      ]
+    }
+  },
+  "dest": {
+    "hero": { "alt": "Aseer", "tagline": "A stunning destination in the heart of the mountains", "title": "Aseer" },
+    "about": {
+      "title": "About Aseer",
+      "body": "Aseer is the cultural heart of the Kingdom, with many diverse landmarks in Abha. Explore Shada Palace, Abha Dam Lake, and the amusement park at Abha Palace. Wander Aseer National Park near Jabal Al-Soudah, visit Al-Shalal Park and Abu Khayal Park. Enjoy the Abha cable car, Aseer Region Museum, Al-Muftaha Art Village, and the tribal traditions in Al-Habala and Rijal Alma'."
+    },
+    "explore": { "title": "Explore & Enjoy" },
+    "cards": {
+      "cta": "View details",
+      "0": { "title": "Abo Noghtha Castles - Historic Tabab" },
+      "1": { "title": "Al Rashid Mall" },
+      "2": { "title": "Ala Bali Restaurant" },
+      "3": { "title": "Al Habala Park" },
+      "4": { "title": "The Vineyard" },
+      "5": { "title": "Dalqan Park" }
+    },
+    "tags": { "SHOPPING": "Shopping", "DINING": "Dining", "NATURE": "Nature", "SPORTS": "Sports", "FARM TOUR": "Farm Tour", "CULTURE": "Culture" },
+    "tours": {
+      "title": "Guided Tours & Experiences",
+      "cta": "Book now",
+      "items": [
+        { "title": "Abha Forest Hiking", "tag": "From 25 SAR" },
+        { "title": "Half Day in Aseer", "tag": "From 50 SAR" },
+        { "title": "Historic Aseer Palaces Tour", "tag": "From 30 SAR" },
+        { "title": "3 Days in Aseer Mountains", "tag": "From 120 SAR" }
+      ]
+    },
+    "events": {
+      "title": "What's Going On in Aseer",
+      "items": [
+        { "date": "May 20, 2025 → Jun 18, 2025", "title": "Cowboys City", "location": "Aseer", "price": "From 25 SAR", "cta": "Buy Tickets" },
+        { "date": "Dec 19, 2025 → Jan 01, 2026", "title": "Hail Fest", "location": "Aseer", "price": "From 25 SAR", "cta": "Buy Tickets" },
+        { "date": "Jul 14, 2025 → Jul 31, 2025", "title": "Sea & River", "location": "Aseer", "price": "From 25 SAR", "cta": "Visit Website" },
+        { "date": "Jun 10, 2025 → Jun 30, 2025", "title": "BattleKart", "location": "Al Baha", "price": "From 25 SAR", "cta": "Visit Website" }
+      ]
+    },
+    "a11y": { "prev": "Previous", "next": "Next" },
+    "taif": { "alt": "Explore Taif", "title": "Explore Taif", "subtitle": "A mountainous city famous for rose flowers" }
+  },
+  "livePage": {
+    "hero": { "alt": "Live events banner" },
+    "food": {
+      "title": "Dining Places in the South",
+      "places": { "0": "Over Jar Cafe", "1": "Al Baik", "2": "Baitana Afghani", "3": "Alia Sweets" }
+    },
+    "featured": {
+      "from": "From",
+      "perPerson": "per person",
+      "title": "Soul",
+      "body": "Soul Cafe & Restaurant is beloved by locals and visitors alike. It’s a relaxed, elegant spot for breakfast, coffee or dinner, with a carefully curated menu mixing international dishes with local Saudi favorites.",
+      "location": "Al Baha",
+      "ages": "All",
+      "activities": "All",
+      "hours": "Daily 7:00 AM – 12:00 AM",
+      "openNow": "Open now",
+      "images": {
+        "mainAlt": "Soul main photo",
+        "small1Alt": "Soul small photo 1",
+        "small2Alt": "Soul small photo 2",
+        "small3Alt": "Soul small photo 3"
+      },
+      "pay": "Pay"
+    },
+    "info": {
+      "title": "Information",
+      "locationLabel": "Location",
+      "agesLabel": "Ages",
+      "activitiesLabel": "Activities",
+      "hoursLabel": "Hours",
+      "mapAlt": "Map",
+      "directionsCta": "Get directions"
+    },
+    "calendar": {
+      "title": "Pick dates",
+      "selectedDay": "16 Jul",
+      "monthYear": "July 2025",
+      "week": { "0": "Sun", "1": "Mon", "2": "Tue", "3": "Wed", "4": "Thu", "5": "Fri", "6": "Sat" },
+      "next": "Next"
+    },
+    "locations": {
+      "title": "Available locations",
+      "items": ["Bani Malik St.", "Prince St.", "Downtown", "Kadi", "Palestine St."]
+    },
+    "booking": {
+      "title": "Book your place",
+      "from": "From",
+      "sarPerDay": "SAR per day",
+      "body": "Lorem ipsum placeholder about booking details.",
+      "cardNumber": "Card number",
+      "visa": "Visa",
+      "mastercard": "Mastercard",
+      "name": "Cardholder name",
+      "cvv": "CVV",
+      "payNow": "Pay now"
+    }
+  },
+  "poi": {
+    "aboNoghtha": {
+      "hero": {
+        "alt": "Abo Noghtha Castle",
+        "title": "Abo Noghtha Castle – Historic Tabab"
+      },
+      "about": {
+        "title": "About Abo Noghtha – Historic Tabab",
+        "body": "Abo Noghtha is a cluster of heritage fortresses atop the hills of Tabab in Aseer. Built with stone and clay in the region’s distinctive style, it offers a glimpse into defensive architecture in the south of Saudi Arabia. Visitors can explore the ruins, enjoy panoramic views, and learn about tribal history and the area’s historic role in trade and defense."
+      },
+      "images": {
+        "mainAlt": "Main castle photo",
+        "small1Alt": "Side tower",
+        "small2Alt": "Courtyard view",
+        "small3Alt": "Stone walls"
+      },
+      "info": {
+        "title": "Information",
+        "locationLabel": "Location",
+        "location": "Aseer",
+        "agesLabel": "Ages",
+        "ages": "All ages",
+        "activitiesLabel": "Activities",
+        "hoursLabel": "Hours",
+        "hoursValue": "Daily from 9:00 AM to 9:00 PM",
+        "closedNow": "Closed now",
+        "mapAlt": "Map",
+        "directionsCta": "Get directions"
+      },
+      "more": {
+        "title": "More in Aseer",
+        "cardSubtitle": "Explore this featured site in Aseer",
+        "cta": "View details"
+      },
+      "cards": {
+        "0": { "title": "Abo Noghtha Castles - Historic Tabab" },
+        "1": { "title": "Al Rashid Mall" },
+        "2": { "title": "Ala Bali Restaurant" },
+        "3": { "title": "Al Habala Park" },
+        "4": { "title": "The Vineyard" },
+        "5": { "title": "Dalqan Park" }
+      },
+      "albaha": {
+        "alt": "Explore Al Baha",
+        "title": "Explore Al Baha",
+        "subtitle": "Home to forests, parks, and mountains"
+      }
+    }
+  },
+  "guide": {
+    "aseer": {
+      "title": "Complete Guide to Aseer",
+      "weather": {
+        "title": "Weather",
+        "alt": "Weather",
+        "temp": "33°C",
+        "status": "Clear",
+        "seasons": {
+          "winter": { "name": "Winter", "range": "6°C → 20°C" },
+          "spring": { "name": "Spring", "range": "12°C → 30°C" },
+          "summer": { "name": "Summer", "range": "16°C → 31°C" },
+          "autumn": { "name": "Autumn", "range": "11°C → 26°C" }
+        }
+      },
+      "transport": {
+        "title": "Transport",
+        "items": [
+          { "alt": "Car", "text": "Rent a car or a private driver" },
+          { "alt": "Taxi", "text": "Book a car with a company like Green Taxi" },
+          { "alt": "Bus", "text": "Explore the city using Abha public buses" }
+        ],
+        "more": "Learn more"
+      },
+      "city": {
+        "title": "City Guide",
+        "body": "Use the guide below to discover what to see and do in Aseer. Explore top attractions and find places to stay and eat.",
+        "download": "Download",
+        "downloadAlt": "Guide download"
+      }
+    }
+  },
+  "footer": {
+    "newsletter": {
+      "title": "Subscribe to our Newsletter",
+      "placeholder": "Enter your email here",
+      "cta": "Subscribe"
+    },
+    "download": {
+      "title": "Download Visit Janoub App",
+      "appGalleryAlt": "AppGallery",
+      "appStoreAlt": "App Store",
+      "googlePlayAlt": "Google Play"
+    },
+    "partnerAlt": "Saudi Tourism Authority",
+    "contact": {
+      "title": "Contact Information",
+      "address": "732 Al-Balad, Jeddah"
+    },
+    "quick": {
+      "title": "Quick Links",
+      "links": {
+        "home": "Home",
+        "about": "About Us",
+        "destinations": "Destinations",
+        "events": "Events",
+        "bookings": "Bookings & Tickets",
+        "contact": "Contact Us"
+      }
+    },
+    "social": {
+      "title": "Follow Us",
+      "facebook": "Facebook",
+      "twitter": "Twitter",
+      "instagram": "Instagram",
+      "youtube": "YouTube"
+    },
+    "bottom": {
+      "rights": "© All Rights Reserved"
+    }
+  },
+  "auth": {
+    "hero": { "title": "Welcome back to Visit Janoub" },
+    "signIn": {
+      "bgAlt": "Historic castle background",
+      "subtitle": "Sign in to continue your journey.",
+      "heading": "Sign in to your account",
+      "remember": "Remember me",
+      "forgot": "Forgot password?",
+      "submit": "Sign In",
+      "noAccount": "Don’t have an account?",
+      "createNow": "Create one now"
+    },
+    "signUp": {
+      "bgAlt": "Castle background for Sign Up",
+      "subtitle": "Create your new Visit Janoub account",
+      "heading": "Create Account",
+      "firstName": "First Name",
+      "lastName": "Last Name",
+      "password": "Password",
+      "confirmPassword": "Confirm Password",
+      "agree1": "I agree to the",
+      "terms": "Terms of Service",
+      "and": "and",
+      "privacy": "Privacy Policy",
+      "submit": "Sign Up",
+      "haveAccount": "Already have an account?",
+      "signIn": "Sign In"
+    },
+    "labels": {
+      "email": "Email",
+      "password": "Password",
+      "emailPlaceholder": "Enter your email"
+    }
+  }
+}

@@ -1,0 +1,55 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@600&display=swap');
+@import "tailwindcss";
+
+/* Root Theme Variables */
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+/* Global Base Styles */
+html, body {
+  background-color: #ffffff !important;
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  font-family: 'Montserrat', sans-serif !important; /* ✅ Apply Montserrat */
+  font-weight: 600 !important; /* ✅ Use 600 weight globally */
+}
+
+main {
+  background-color: #ffffff !important;
+}
+
+/* Hide scrollbars */
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* Tailwind Theme Customization */
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: 'Montserrat', sans-serif; /* ✅ Tailwind font override */
+  --font-mono: var(--font-geist-mono);
+}
+
+/* Dark Mode */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+/* Final Global Body Font Enforcement */
+body {
+  color: var(--foreground);
+  font-family: 'Montserrat', sans-serif !important;
+  font-weight: 600 !important;
+}

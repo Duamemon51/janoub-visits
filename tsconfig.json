@@ -1,0 +1,27 @@
+{
+  "compilerOptions": {
+    "target": "ES2017",
+    "lib": ["dom", "dom.iterable", "esnext"],
+    "allowJs": true,
+    "skipLibCheck": true,
+    "strict": true,
+    "noEmit": true,
+    "esModuleInterop": true,
+    "module": "esnext",
+    "moduleResolution": "bundler",
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "jsx": "preserve",
+    "incremental": true,
+    "plugins": [
+      {
+        "name": "next"
+      }
+    ],
+    "paths": {
+      "@/*": ["./src/*"]
+    }
+  },
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "src/app/admin/layout.jsx", "src/app/api/admin/signin/route.js", "src/app/JanoubEats/page.jsx", "src/app/JanoubEats/page.jsx", "src/app/feedback/page.jsx", "src/app/reset-password/page.jsx", "src/lib/mailer.js", "src/app/api/auth/signup/route.js", "src/app/api/auth/forgot-password/route.js", "src/app/forgot-password/page.jsx", "src/app/api/auth/forgot-password/route.js", "src/app/personal-information/page.jsx"],
+  "exclude": ["node_modules"]
+}
