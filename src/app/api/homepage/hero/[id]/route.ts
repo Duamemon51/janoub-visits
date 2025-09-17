@@ -1,6 +1,8 @@
 import connectToDB from "@/lib/mongodb";
 import Hero from "@/models/Hero";
 import AWS from "aws-sdk";
+import type { NextRequest } from "next/server";
+import { NextResponse } from "next/server";
 
 // 🔹 Initialize S3
 const s3 = new AWS.S3({
@@ -44,7 +46,7 @@ function getS3Url(key?: string | null) {
 
 // ================= UPDATE =================
 export async function PUT(
-  req: Request,
+  req: NextRequest,
   context: { params: { id: string } }
 ) {
   await connectToDB();
@@ -57,9 +59,7 @@ export async function PUT(
 
   const hero = await Hero.findById(id);
   if (!hero)
-    return new Response(JSON.stringify({ message: "Hero not found" }), {
-      status: 404,
-    });
+    return NextResponse.json({ message: "Hero not found" }, { status: 404 });
 
   hero.title = title || hero.title;
   hero.subtitle = subtitle || hero.subtitle;
@@ -80,12 +80,12 @@ export async function PUT(
   const heroObj = hero.toObject();
   heroObj.image = getS3Url(hero.image);
 
-  return new Response(JSON.stringify(heroObj), { status: 200 });
+  return NextResponse.json(heroObj, { status: 200 });
 }
 
 // ================= DELETE =================
 export async function DELETE(
-  req: Request,
+  req: NextRequest,
   context: { params: { id: string } }
 ) {
   await connectToDB();
@@ -93,9 +93,7 @@ export async function DELETE(
 
   const hero = await Hero.findById(id);
   if (!hero)
-    return new Response(JSON.stringify({ message: "Hero not found" }), {
-      status: 404,
-    });
+    return NextResponse.json({ message: "Hero not found" }, { status: 404 });
 
   // 🔹 Delete from S3
   if (hero.image) {
@@ -104,7 +102,5 @@ export async function DELETE(
 
   await Hero.findByIdAndDelete(id);
 
-  return new Response(JSON.stringify({ message: "Hero deleted" }), {
-    status: 200,
-  });
+  return NextResponse.json({ message: "Hero deleted" }, { status: 200 });
 }
