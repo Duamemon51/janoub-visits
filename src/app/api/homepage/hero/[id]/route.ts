@@ -47,10 +47,10 @@ function getS3Url(key?: string | null) {
 // ================= UPDATE =================
 export async function PUT(
   req: NextRequest,
-  context: { params: { id: string } }
+  { params }: { params: { id: string } }
 ) {
   await connectToDB();
-  const { id } = context.params;
+  const { id } = params;
 
   const data = await req.formData();
   const title = data.get("title") as string;
@@ -58,19 +58,18 @@ export async function PUT(
   const imageFile = data.get("image") as File | null;
 
   const hero = await Hero.findById(id);
-  if (!hero)
+  if (!hero) {
     return NextResponse.json({ message: "Hero not found" }, { status: 404 });
+  }
 
   hero.title = title || hero.title;
   hero.subtitle = subtitle || hero.subtitle;
 
   // 🔹 If new image uploaded
   if (imageFile && imageFile.size > 0) {
-    // delete old image from S3
     if (hero.image) {
-      await deleteFromS3(hero.image);
+      await deleteFromS3(hero.image); // delete old image
     }
-    // upload new
     const newKey = await uploadToS3(imageFile, "hero-images");
     hero.image = newKey;
   }
@@ -86,18 +85,18 @@ export async function PUT(
 // ================= DELETE =================
 export async function DELETE(
   req: NextRequest,
-  context: { params: { id: string } }
+  { params }: { params: { id: string } }
 ) {
   await connectToDB();
-  const { id } = context.params;
+  const { id } = params;
 
   const hero = await Hero.findById(id);
-  if (!hero)
+  if (!hero) {
     return NextResponse.json({ message: "Hero not found" }, { status: 404 });
+  }
 
-  // 🔹 Delete from S3
   if (hero.image) {
-    await deleteFromS3(hero.image);
+    await deleteFromS3(hero.image); // delete from S3
   }
 
   await Hero.findByIdAndDelete(id);
