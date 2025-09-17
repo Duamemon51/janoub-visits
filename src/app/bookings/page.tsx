@@ -53,7 +53,7 @@ export default function BookingsPage() {
           {/* Avatar */}
           <div className="relative flex justify-center -mb-12">
             <div className="relative w-36 h-36">
-              <Image src="/logo.png" alt="Logo Frame" fill className="object-contain" />
+              <Image src="/Logo.png" alt="Logo Frame" fill className="object-contain" />
               {user && (
                 <div className="absolute inset-5 rounded-full overflow-hidden border-4 border-white shadow-md">
                   <Image src={profileAvatar} alt="Profile" fill className="object-cover" />

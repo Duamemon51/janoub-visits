@@ -39,7 +39,7 @@ export default function HelpSupportPage() {
         {/* Avatar inside logo frame */}
         <div className="relative flex justify-center -mb-12">
           <div className="relative w-28 h-28">
-            <Image src="/logo.png" alt="Logo Frame" fill className="object-contain" />
+            <Image src="/Logo.png" alt="Logo Frame" fill className="object-contain" />
             {user && (
               <div className="absolute inset-4 rounded-full overflow-hidden border-2 border-white shadow-md">
                 <Image src={profileAvatar} alt="Profile" fill className="object-cover" />

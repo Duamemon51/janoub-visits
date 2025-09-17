@@ -129,7 +129,7 @@ export default function PersonalInformationPage() {
 
           <div className="relative flex flex-col items-center z-10">
             <div className="relative w-36 h-36">
-              <Image src="/logo.png" alt="Logo Frame" fill className="object-contain" sizes="144px" priority />
+              <Image src="/Logo.png" alt="Logo Frame" fill className="object-contain" sizes="144px" priority />
               <div className="absolute inset-5 rounded-full overflow-hidden border-4 border-white shadow-md">
                 <Image src={avatar} alt="Profile" fill className="object-cover" />
               </div>
