@@ -43,9 +43,12 @@ function getS3Url(key?: string | null) {
 }
 
 // ================= UPDATE =================
-export async function PUT(req: Request, { params }: { params: { id: string } }) {
+export async function PUT(
+  req: Request,
+  context: { params: { id: string } }
+) {
   await connectToDB();
-  const { id } = params;
+  const { id } = context.params;
 
   const data = await req.formData();
   const title = data.get("title") as string;
@@ -83,10 +86,10 @@ export async function PUT(req: Request, { params }: { params: { id: string } }) 
 // ================= DELETE =================
 export async function DELETE(
   req: Request,
-  { params }: { params: { id: string } }
+  context: { params: { id: string } }
 ) {
   await connectToDB();
-  const { id } = params;
+  const { id } = context.params;
 
   const hero = await Hero.findById(id);
   if (!hero)
