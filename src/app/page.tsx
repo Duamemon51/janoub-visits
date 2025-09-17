@@ -69,7 +69,7 @@ const [eats, setEats] = useState<Eat[]>([]);
   // Fetch categories
   const fetchCategories = async () => {
     try {
-      const res = await fetch("/api/admin/categories");
+      const res = await fetch("/api/categories");
       const data = await res.json();
       setCategories(data);
     } catch (error) {
