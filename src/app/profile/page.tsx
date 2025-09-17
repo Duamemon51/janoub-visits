@@ -49,7 +49,7 @@ export default function ProfilePage() {
             <div className="relative w-36 h-36">
              <div className="relative w-36 h-36">
   <Image
-    src="/Logo.png"
+    src="/logo.png"
     alt="Logo Frame"
     fill
     className="object-contain"
