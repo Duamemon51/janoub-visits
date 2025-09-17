@@ -47,14 +47,15 @@ export default function ProfilePage() {
           {/* Avatar inside logo frame */}
           <div className="relative flex justify-center -mb-12">
             <div className="relative w-36 h-36">
-              <Image
-                src="/logo.png"
-                alt="Logo Frame"
-                fill
-                className="object-contain"
-                sizes="144px"
-                priority
-              />
+             <Image
+  src="/logo.png"
+  alt="Logo Frame"
+  width={144}
+  height={144}
+  className="object-contain"
+  priority
+/>
+
               {user && (
                 <div className="absolute inset-5 rounded-full overflow-hidden border-4 border-white shadow-md">
                   {isBase64Image(user.avatar || "") ? (
