@@ -1,7 +1,6 @@
 import connectToDB from "@/lib/mongodb";
 import Hero from "@/models/Hero";
 import AWS from "aws-sdk";
-import type { NextRequest } from "next/server";
 import { NextResponse } from "next/server";
 
 // 🔹 Initialize S3
@@ -12,12 +11,12 @@ const s3 = new AWS.S3({
 });
 
 // 🔹 Upload to S3
-async function uploadToS3(file: File, keyPrefix: string) {
+async function uploadToS3(file, keyPrefix) {
   const buffer = Buffer.from(await file.arrayBuffer());
   const objectKey = `${keyPrefix}/${Date.now()}-${file.name}`;
 
   const params = {
-    Bucket: process.env.AWS_S3_BUCKET!,
+    Bucket: process.env.AWS_S3_BUCKET,
     Key: objectKey,
     Body: buffer,
     ContentType: file.type,
@@ -28,34 +27,31 @@ async function uploadToS3(file: File, keyPrefix: string) {
 }
 
 // 🔹 Delete from S3
-async function deleteFromS3(key: string) {
+async function deleteFromS3(key) {
   if (!key) return;
   await s3
     .deleteObject({
-      Bucket: process.env.AWS_S3_BUCKET!,
+      Bucket: process.env.AWS_S3_BUCKET,
       Key: key,
     })
     .promise();
 }
 
 // 🔹 Get public URL
-function getS3Url(key?: string | null) {
+function getS3Url(key) {
   if (!key) return null;
   return `https://${process.env.AWS_S3_BUCKET}.s3.${process.env.AWS_REGION}.amazonaws.com/${key}`;
 }
 
 // ================= UPDATE =================
-export async function PUT(
-  req: NextRequest,
-  { params }: { params: { id: string } }
-) {
+export async function PUT(req, { params }) {
   await connectToDB();
   const { id } = params;
 
   const data = await req.formData();
-  const title = data.get("title") as string;
-  const subtitle = data.get("subtitle") as string;
-  const imageFile = data.get("image") as File | null;
+  const title = data.get("title");
+  const subtitle = data.get("subtitle");
+  const imageFile = data.get("image");
 
   const hero = await Hero.findById(id);
   if (!hero) {
@@ -83,10 +79,7 @@ export async function PUT(
 }
 
 // ================= DELETE =================
-export async function DELETE(
-  req: NextRequest,
-  { params }: { params: { id: string } }
-) {
+export async function DELETE(req, { params }) {
   await connectToDB();
   const { id } = params;
 
