@@ -12,11 +12,18 @@ import Destination from "@/models/Destination";
 // ✅ S3 URL helper
 const s3BaseUrl = `https://${process.env.AWS_S3_BUCKET}.s3.${process.env.AWS_REGION}.amazonaws.com`;
 
-function getS3Url(key?: string) {
+function getS3Url(key?: string | null) {
   if (!key) return null;
   if (key.startsWith("http")) return key; // already a URL
   return `${s3BaseUrl}/${key}`;
 }
+
+// Define types for better TS support
+type EatType = {
+  images?: string[];
+  location?: string | null;
+  [key: string]: any;
+};
 
 export async function GET(req: Request) {
   try {
@@ -29,10 +36,8 @@ export async function GET(req: Request) {
       return NextResponse.json({ results: [] });
     }
 
-    // 🔎 Case-insensitive regex
     const regex = new RegExp(query, "i");
 
-    // 🔎 Parallel search in all collections
     const [places, categories, eats, liveEvents, tours, destinations] =
       await Promise.all([
         Place.find({ name: regex }).limit(5).lean(),
@@ -43,7 +48,6 @@ export async function GET(req: Request) {
         Destination.find({ title: regex }).limit(5).lean(),
       ]);
 
-    // ✅ Format + attach type
     const formattedResults = [
       ...places.map((p) => ({
         ...p,
@@ -55,10 +59,10 @@ export async function GET(req: Request) {
         type: "Category",
         icon: getS3Url(c.icon),
       })),
-      ...eats.map((e) => ({
+      ...eats.map((e: EatType) => ({
         ...e,
         type: "Eat",
-        images: e.images?.map((img) => getS3Url(img)) || [],
+        images: e.images?.map((img: string) => getS3Url(img)) || [],
         location: e.location || null,
       })),
       ...liveEvents.map((l) => ({
