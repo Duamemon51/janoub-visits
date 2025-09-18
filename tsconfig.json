@@ -22,6 +22,6 @@
       "@/*": ["./src/*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "src/app/admin/layout.jsx", "src/app/api/admin/signin/route.js", "src/app/JanoubEats/page.jsx", "src/app/JanoubEats/page.jsx", "src/app/feedback/page.jsx", "src/app/reset-password/page.jsx", "src/lib/mailer.js", "src/app/api/auth/signup/route.js", "src/app/api/auth/forgot-password/route.js", "src/app/forgot-password/page.jsx", "src/app/api/auth/forgot-password/route.js", "src/app/personal-information/page.jsx"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "src/app/admin/layout.jsx", "src/app/api/admin/signin/route.js", "src/app/JanoubEats/page.jsx", "src/app/JanoubEats/page.jsx", "src/app/feedback/page.jsx", "src/app/reset-password/page.jsx", "src/lib/mailer.js", "src/app/api/auth/signup/route.js", "src/app/api/auth/forgot-password/route.js", "src/app/forgot-password/page.jsx", "src/app/api/auth/forgot-password/route.js", "src/app/personal-information/page.jsx", "src/app/api/search/route.js", "src/app/api/search/route.js", "src/app/api/homepage/hero/[id]/route.js", "src/app/api/admin/profile/route.js", "src/app/api/admin/eats/route.js", "src/app/api/admin/eats/route.js", "src/app/api/destinations/[id]/route.js", "src/app/api/admin/categories/route.js", "src/app/api/destinations/[id]/route.js", "src/app/api/destinations/[id]/route.js", "src/app/ticket-booking/TicketBookingContent.jsx", "src/app/ticket-booking/TicketBookingContent.jsx"],
   "exclude": ["node_modules"]
 }
