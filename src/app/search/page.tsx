@@ -1,7 +1,7 @@
-"use client"; // Must be the very first line
+"use client"; // Must be first
 
 import { useSearchParams } from "next/navigation";
-import { useEffect, useState } from "react";
+import { useEffect, useState, Suspense } from "react";
 import Link from "next/link";
 import { MapPin } from "lucide-react";
 
@@ -78,7 +78,12 @@ const PlaceCard = ({ place }: { place: Place }) => (
       )}
       <div
         className="absolute top-2 left-2 text-white text-[14px] font-semibold"
-        style={{ backgroundColor: "#00000080", padding: "6px 12px", borderTopLeftRadius: "25px", borderBottomRightRadius: "25px" }}
+        style={{
+          backgroundColor: "#00000080",
+          padding: "6px 12px",
+          borderTopLeftRadius: "25px",
+          borderBottomRightRadius: "25px",
+        }}
       >
         {place.name}
       </div>
@@ -170,8 +175,17 @@ const DestinationCard = ({ destination }: { destination: Destination }) => (
   </Link>
 );
 
-// -------------------- Main Search Page --------------------
+// -------------------- Main Page --------------------
 export default function SearchPage() {
+  return (
+    <Suspense fallback={<p className="p-6 text-center">Loading search...</p>}>
+      <SearchResults />
+    </Suspense>
+  );
+}
+
+// -------------------- Client Component --------------------
+function SearchResults() {
   const searchParams = useSearchParams();
   const query = searchParams.get("q") || "";
   const [results, setResults] = useState<SearchResult[]>([]);
@@ -190,23 +204,15 @@ export default function SearchPage() {
       .catch(() => setLoading(false));
   }, [query]);
 
-  // Type-safe rendering function
   const renderCard = (item: SearchResult) => {
     switch (item.type) {
-      case "Place":
-        return <PlaceCard key={item._id} place={item as Place} />;
-      case "Category":
-        return <CategoryCard key={item._id} category={item as Category} />;
-      case "Eat":
-        return <EatCard key={item._id} eat={item as Eat} />;
-      case "LiveEvent":
-        return <LiveEventCard key={item._id} event={item as LiveEvent} />;
-      case "Tour":
-        return <TourCard key={item._id} tour={item as Tour} />;
-      case "Destination":
-        return <DestinationCard key={item._id} destination={item as Destination} />;
-      default:
-        return null;
+      case "Place": return <PlaceCard key={item._id} place={item as Place} />;
+      case "Category": return <CategoryCard key={item._id} category={item as Category} />;
+      case "Eat": return <EatCard key={item._id} eat={item as Eat} />;
+      case "LiveEvent": return <LiveEventCard key={item._id} event={item as LiveEvent} />;
+      case "Tour": return <TourCard key={item._id} tour={item as Tour} />;
+      case "Destination": return <DestinationCard key={item._id} destination={item as Destination} />;
+      default: return null;
     }
   };
 
