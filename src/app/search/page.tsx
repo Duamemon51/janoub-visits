@@ -42,8 +42,8 @@ interface LiveEvent {
 
 interface Tour {
   _id: string;
-  title: string;
-  image?: string;
+  name: string;
+  img?: string;
   description?: string;
   type: "Tour";
 }
@@ -151,9 +151,9 @@ const LiveEventCard = ({ event }: { event: LiveEvent }) => {
 
 const TourCard = ({ tour }: { tour: Tour }) => (
   <div className="w-[260px] rounded-lg overflow-hidden shadow bg-white">
-    <img src={tour.image || "/placeholder.png"} alt={tour.title} className="h-[160px] w-full object-cover" />
+    <img src={tour.img || "/placeholder.png"} alt={tour.name} className="h-[160px] w-full object-cover" />
     <div className="p-3">
-      <h3 className="font-bold text-[15px] mb-2">{tour.title}</h3>
+      <h3 className="font-bold text-[15px] mb-2">{tour.name}</h3>
       <p className="text-[13px] text-gray-600 line-clamp-2">{tour.description || "Explore this tour"}</p>
     </div>
   </div>
