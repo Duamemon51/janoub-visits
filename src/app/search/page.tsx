@@ -66,85 +66,79 @@ type SearchResult =
   | Destination;
 
 // -------------------- Cards --------------------
-function PlaceCard({ place }: { place: Place }) {
-  return (
-    <Link href={`/ExploreJanoub?place=${place._id}`}>
-      <div className="w-[220px] rounded-lg overflow-hidden shadow hover:scale-105 transition relative cursor-pointer">
-        {place.image ? (
-          <img
-            src={place.image}
-            alt={place.name}
-            className="h-[165px] w-full object-cover"
-          />
-        ) : (
-          <div className="h-[165px] w-full bg-gray-300 flex items-center justify-center">
-            No Image
-          </div>
-        )}
-        <div
-          className="absolute top-2 left-2 text-white text-[14px] font-semibold"
-          style={{
-            backgroundColor: "#00000080",
-            padding: "6px 12px",
-            borderTopLeftRadius: "25px",
-            borderBottomRightRadius: "25px",
-          }}
-        >
-          {place.name}
+const PlaceCard = ({ place }: { place: Place }) => (
+  <Link href={`/ExploreJanoub?place=${place._id}`}>
+    <div className="w-[220px] rounded-lg overflow-hidden shadow hover:scale-105 transition relative cursor-pointer">
+      {place.image ? (
+        <img
+          src={place.image}
+          alt={place.name}
+          className="h-[165px] w-full object-cover"
+        />
+      ) : (
+        <div className="h-[165px] w-full bg-gray-300 flex items-center justify-center">
+          No Image
         </div>
+      )}
+      <div
+        className="absolute top-2 left-2 text-white text-[14px] font-semibold"
+        style={{
+          backgroundColor: "#00000080",
+          padding: "6px 12px",
+          borderTopLeftRadius: "25px",
+          borderBottomRightRadius: "25px",
+        }}
+      >
+        {place.name}
       </div>
-    </Link>
-  );
-}
+    </div>
+  </Link>
+);
 
-function CategoryCard({ category }: { category: Category }) {
-  return (
-    <Link
-      href={`/ExploreJanoub?category=${category._id}`}
-      className="border rounded-lg flex flex-col items-center justify-center w-[140px] h-[140px]"
-      style={{
-        borderColor: "#56008D",
-        color: "#56008D",
-        fontWeight: 600,
-      }}
-    >
-      <img
-        src={category.icon}
-        alt={category.name}
-        className="w-[32px] h-[32px] mb-2"
-      />
-      {category.name}
-    </Link>
-  );
-}
+const CategoryCard = ({ category }: { category: Category }) => (
+  <Link
+    href={`/ExploreJanoub?category=${category._id}`}
+    className="border rounded-lg flex flex-col items-center justify-center w-[140px] h-[140px]"
+    style={{
+      borderColor: "#56008D",
+      color: "#56008D",
+      fontWeight: 600,
+    }}
+  >
+    <img
+      src={category.icon}
+      alt={category.name}
+      className="w-[32px] h-[32px] mb-2"
+    />
+    {category.name}
+  </Link>
+);
 
-function EatCard({ eat }: { eat: Eat }) {
-  return (
-    <Link
-      href={`/JanoubEats?featured=${eat._id}`}
-      className="w-[300px] rounded-[16px] bg-white border border-[#E6E6E6] shadow-[0_2px_8px_rgba(0,0,0,0.04)]"
-    >
-      <img
-        src={eat.images?.[0] || "/placeholder.png"}
-        alt={eat.title}
-        className="w-full h-[200px] object-cover rounded-t-[16px]"
-      />
-      <div className="p-4">
-        <div className="text-[#1E1E1E] font-semibold text-[15px] leading-[1.2] mb-2">
-          {eat.title}
+const EatCard = ({ eat }: { eat: Eat }) => (
+  <Link
+    href={`/JanoubEats?featured=${eat._id}`}
+    className="w-[300px] rounded-[16px] bg-white border border-[#E6E6E6] shadow-[0_2px_8px_rgba(0,0,0,0.04)]"
+  >
+    <img
+      src={eat.images?.[0] || "/placeholder.png"}
+      alt={eat.title}
+      className="w-full h-[200px] object-cover rounded-t-[16px]"
+    />
+    <div className="p-4">
+      <div className="text-[#1E1E1E] font-semibold text-[15px] leading-[1.2] mb-2">
+        {eat.title}
+      </div>
+      {eat.location && (
+        <div className="flex items-center gap-1 text-[12px] font-semibold text-[#6B7280]">
+          <MapPin className="w-4 h-4" />
+          {eat.location}
         </div>
-        {eat.location && (
-          <div className="flex items-center gap-1 text-[12px] font-semibold text-[#6B7280]">
-            <MapPin className="w-4 h-4" />
-            {eat.location}
-          </div>
-        )}
-      </div>
-    </Link>
-  );
-}
+      )}
+    </div>
+  </Link>
+);
 
-function LiveEventCard({ event }: { event: LiveEvent }) {
+const LiveEventCard = ({ event }: { event: LiveEvent }) => {
   const from = new Date(event.dateFrom);
   const to = new Date(event.dateTo);
   const formattedDate = `${from.getDate().toString().padStart(2, "0")} ${from.toLocaleString(
@@ -190,71 +184,67 @@ function LiveEventCard({ event }: { event: LiveEvent }) {
       </div>
     </div>
   );
-}
+};
 
-function TourCard({ tour }: { tour: Tour }) {
-  return (
-    <div className="w-[260px] rounded-lg overflow-hidden shadow bg-white">
-      <img
-        src={tour.image || "/placeholder.png"}
-        alt={tour.title}
-        className="h-[160px] w-full object-cover"
-      />
-      <div className="p-3">
-        <h3 className="font-bold text-[15px] mb-2">{tour.title}</h3>
-        <p className="text-[13px] text-gray-600 line-clamp-2">
-          {tour.description || "Explore this tour"}
-        </p>
-      </div>
+const TourCard = ({ tour }: { tour: Tour }) => (
+  <div className="w-[260px] rounded-lg overflow-hidden shadow bg-white">
+    <img
+      src={tour.image || "/placeholder.png"}
+      alt={tour.title}
+      className="h-[160px] w-full object-cover"
+    />
+    <div className="p-3">
+      <h3 className="font-bold text-[15px] mb-2">{tour.title}</h3>
+      <p className="text-[13px] text-gray-600 line-clamp-2">
+        {tour.description || "Explore this tour"}
+      </p>
     </div>
-  );
-}
+  </div>
+);
 
-function DestinationCard({ destination }: { destination: Destination }) {
-  return (
-    <Link
-      href={`/ExploreJanoub?destination=${destination._id}`}
-      className="w-[240px] rounded-lg overflow-hidden shadow bg-white"
-    >
-      <img
-        src={destination.img || "/placeholder.png"}
-        alt={destination.title}
-        className="h-[160px] w-full object-cover"
-      />
-      <div className="p-3">
-        <h3 className="font-bold text-[15px] mb-2">{destination.title}</h3>
-        {destination.tag && (
-          <p className="text-[12px] text-gray-500">{destination.tag}</p>
-        )}
-        {destination.location && (
-          <p className="text-[12px] text-gray-400 flex items-center gap-1">
-            <MapPin className="w-4 h-4" />
-            {destination.location}
-          </p>
-        )}
-      </div>
-    </Link>
-  );
-}
+const DestinationCard = ({ destination }: { destination: Destination }) => (
+  <Link
+    href={`/ExploreJanoub?destination=${destination._id}`}
+    className="w-[240px] rounded-lg overflow-hidden shadow bg-white"
+  >
+    <img
+      src={destination.img || "/placeholder.png"}
+      alt={destination.title}
+      className="h-[160px] w-full object-cover"
+    />
+    <div className="p-3">
+      <h3 className="font-bold text-[15px] mb-2">{destination.title}</h3>
+      {destination.tag && (
+        <p className="text-[12px] text-gray-500">{destination.tag}</p>
+      )}
+      {destination.location && (
+        <p className="text-[12px] text-gray-400 flex items-center gap-1">
+          <MapPin className="w-4 h-4" />
+          {destination.location}
+        </p>
+      )}
+    </div>
+  </Link>
+);
 
 // -------------------- Main Search Page --------------------
 export default function SearchPage() {
   const searchParams = useSearchParams();
-  const query = searchParams.get("q");
+  const query = searchParams.get("q") || "";
   const [results, setResults] = useState<SearchResult[]>([]);
-  const [loading, setLoading] = useState(true);
+  const [loading, setLoading] = useState(false);
 
   useEffect(() => {
-    if (query) {
-      setLoading(true);
-      fetch(`/api/search?q=${query}`)
-        .then((res) => res.json())
-        .then((data) => {
-          setResults(data.results || []);
-          setLoading(false);
-        })
-        .catch(() => setLoading(false));
-    }
+    if (!query) return;
+
+    setLoading(true);
+    fetch(`/api/search?q=${encodeURIComponent(query)}`)
+      .then((res) => res.json())
+      .then((data) => {
+        setResults(data.results || []);
+        setLoading(false);
+      })
+      .catch(() => setLoading(false));
   }, [query]);
 
   return (
@@ -282,12 +272,7 @@ export default function SearchPage() {
               case "Tour":
                 return <TourCard key={item._id} tour={item as Tour} />;
               case "Destination":
-                return (
-                  <DestinationCard
-                    key={item._id}
-                    destination={item as Destination}
-                  />
-                );
+                return <DestinationCard key={item._id} destination={item as Destination} />;
               default:
                 return null;
             }
