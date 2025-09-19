@@ -116,13 +116,13 @@ export default function LivePage() {
             <h2 className="text-[22px] sm:text-[26px] md:text-[28px] text-black font-bold">
               {t('home.live.title')}
             </h2>
-            <a
-              href="#"
-              className="text-[14px] sm:text-[15px] md:text-[16px] font-semibold"
-              style={{ color: '#56008D' }}
-            >
-              {t('common.viewAll')}
-            </a>
+            <Link 
+      href="/JanoubLive" 
+      className="text-[14px] sm:text-[15px] md:text-[16px] font-semibold"
+      style={{ color: '#56008D' }}
+    >
+      {t('common.viewAll')}
+    </Link>
           </div>
 
           <div

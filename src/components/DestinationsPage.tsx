@@ -275,13 +275,13 @@ export default function DestinationsPage() {
 <section className="px-8 py-12 relative">
       <div className="flex justify-between items-center mb-6">
         <h2 className="text-[28px] font-bold">{t('dest.tours.title')}</h2>
-        <a
-          href="#"
-          className="text-[16px] font-semibold"
-          style={{ color: '#56008D' }}
-        >
-          {t('common.viewAll')}
-        </a>
+      <Link 
+      href="/ExploreJanoub" 
+      className="text-[14px] sm:text-[15px] md:text-[16px] font-semibold"
+      style={{ color: '#56008D' }}
+    >
+      {t('common.viewAll')}
+    </Link>
       </div>
 
     <div
@@ -359,9 +359,13 @@ export default function DestinationsPage() {
 </h2>
 
 
-    <a href="#" className="text-[16px] font-semibold" style={{ color: '#56008D' }}>
+ <Link 
+      href="/JanoubLive" 
+      className="text-[14px] sm:text-[15px] md:text-[16px] font-semibold"
+      style={{ color: '#56008D' }}
+    >
       {t('common.viewAll')}
-    </a>
+    </Link>
   </div>
 
   <div id="events-scroll" className="flex gap-6 overflow-x-auto pb-4 scroll-smooth snap-x snap-mandatory">

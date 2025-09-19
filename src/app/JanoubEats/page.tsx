@@ -140,9 +140,13 @@ function JanoubEatsContent() {
           <h2 className="text-[24px] md:text-[28px] font-bold text-[#222]">
             {t("livePage.food.title")}
           </h2>
-          <a href="#" className="text-[#6C2BD9] text-sm hover:underline">
-            {t("common.viewAll")}
-          </a>
+         <Link 
+      href="/JanoubEats" 
+      className="text-[14px] sm:text-[15px] md:text-[16px] font-semibold"
+      style={{ color: '#56008D' }}
+    >
+      {t('common.viewAll')}
+    </Link>
         </div>
 
         <div className="relative">
